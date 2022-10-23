@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const { v4: uuidv4 } = require('uuid');
 const { FieldValue } = require('firebase-admin/firestore');
 const {OAuth2Client} = require('google-auth-library');
-const CLIENT_ID = "611779178684-6k43d22p5teipami42c6m65297tbjmca.apps.googleusercontent.com";
+const CLIENT_ID = "";
 const client = new OAuth2Client(CLIENT_ID);
 
 exports.getSearch = (req,res) =>{
@@ -265,26 +265,6 @@ exports.checkNotAuthenticated = async (req, res, next) => {
         return res.redirect('/');
     }
     next();
-}
-
-exports.postGoogle = async (req, res)=>{
-    let token = req.body.token;
-    let user = {};
-    console.log(token);
-    async function verify() {
-        const ticket = await client.verifyIdToken({
-            idToken: token,
-            audience: CLIENT_ID,
-        });
-        const payload = ticket.getPayload();
-        const userid = payload['sub'];
-      }
-      verify()
-      .then(() => {
-          res.cookie('session-token', token);
-          res.send('success');
-      }).
-      catch();
 }
 
 /**

@@ -22,10 +22,6 @@
     "firebase-admin": "^11.1.0",
     "genius-lyrics-api": "^3.2.0",
     "google-auth-library": "^8.6.0",
-    "method-override": "^3.0.0",
-    "nodemon": "^2.0.20",
-    "passport": "^0.6.0",
-    "passport-email": "^0.0.3",
-    "passport-local": "^1.0.0"
+    "nodemon": "^2.0.20"
   }
 }

@@ -27,8 +27,6 @@ router.get('/signedOut', controller.getSignedOut);
 
 router.post('/login/normal', controller.postLogin);
 
-router.post('/login', controller.postGoogle);
-
 router.post('/register', controller.checkNotAuthenticated, controller.postRegister);
 
 router.post('/profile', controller.postSignout);
